@@ -1,10 +1,22 @@
 $(document).ready(function () {
 /*============== Button_profile-menu ==================*/
 
-$('.button_profile-menu').hide();
-  $('#header_button-profile').on('click', function(){
-       $('.button_profile-menu').slideToggle();
-   }) 
+$(".button_profile-menu").hide();
+
+  $("#header_button-profile").on("click", function () {
+    $(".button_profile-menu").slideToggle();
+  });
+
+  $(document).mouseup(function (e) {
+    const container = $(".button_profile-menu");
+    const container2 = $("#header_button-profile");
+    if (
+      container.has(e.target).length === 0 &&
+      container2.has(e.target).length === 0
+    ) {
+      container.hide();
+    }
+  });
 
 
 /*============== Mobile_menu-aside ====================*/ 
